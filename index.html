@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisador de Números</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h2>Analisador de Números</h2>
+    </header>
+    <div class="container">
+      <section id="section">
+        <div>
+          <label for="txtn">Número (entre 1 e 100):</label>
+          <input type="number" name="txtn" id="txtn" />
+          <input type="button" value="Adicionar" onclick="gerar()" />
+        </div>
+        <div>
+          <br />
+          <select name="lista" id="seltab" size="10">
+            <option value="initial">Digite um valor acima</option>
+          </select>
+          <br />
+          <input type="button" value="Finalizar" onclick="finalizar()" />
+          <input type="button" value="Limpar" onclick="limpar()" />
+        </div>
+        <div id="res">
+          <ul class="resultado-lista">
+            <li></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>&copy; SmaxY</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
