@@ -1,79 +1,84 @@
-let numeros = [];
-let texto = document.querySelector("#res ul");
+let numbers = [];
+let resultText = document.querySelector("#res ul");
 
-function gerar() {
-  let numeroInput = document.querySelector("#txtn").value;
-  let item = document.createElement("li");
-  if (isNaN(numeroInput) || numeroInput <= 0 || numeroInput > 100) {
-    window.alert("Digite um número válido (entre 1 e 100)!");
+function generate() {
+  let numberInput = document.querySelector("#txtn").value;
+  let listItem = document.createElement("li");
+
+  if (isNaN(numberInput) || numberInput <= 0 || numberInput > 100) {
+    window.alert("Please enter a valid number (between 1 and 100)!");
     return;
   } else {
-    numeroInput = parseInt(numeroInput);
+    numberInput = parseInt(numberInput);
   }
 
-  if (!numeros.includes(numeroInput)) {
-    numeros.push(Number(numeroInput));
+  if (!numbers.includes(numberInput)) {
+    numbers.push(Number(numberInput));
 
-    let tab = document.querySelector("#seltab");
-    let itens = document.createElement("option");
-    itens.text = `Valor ${numeroInput} adicionado`;
+    let selectTab = document.querySelector("#seltab");
+    let optionItem = document.createElement("option");
+    optionItem.text = `Value ${numberInput} added`;
 
-    if (typeof numeroInput === "number") {
-      tab.appendChild(itens);
+    if (typeof numberInput === "number") {
+      selectTab.appendChild(optionItem);
     }
   } else {
-    window.alert("Valor Repetido!");
+    window.alert("Duplicate Value!");
   }
 
   document.querySelector("#txtn").value = "";
   document.querySelector("#txtn").focus();
 }
 
-function finalizar() {
-  if (numeros.length === 0) {
-    window.alert("Nenhum número foi adicionado ainda!");
+function finish() {
+  if (numbers.length === 0) {
+    window.alert("No numbers have been added yet!");
     return;
   }
 
-  numeros.sort();
-  texto.innerHTML = "";
+  numbers.sort();
+  resultText.innerHTML = "";
 
-  let maiorValor = numeros[numeros.length - 1];
-  let soma = 0;
-  let menorItem = document.createElement("li");
-  let maiorItem = document.createElement("li");
-  let somaTotal = document.createElement("li");
-  let mediaTotal = document.createElement("li");
-  let todo = document.createElement("li");
-  let menor = numeros[0];
-  let maior = numeros[0];
-  let tot = numeros.length;
-  for (let pos in numeros) {
-    soma += numeros[pos];
-    if (numeros[pos] > maior) {
-      maior = numeros[pos];
+  let highestValue = numbers[numbers.length - 1];
+  let sum = 0;
+  let smallestItem = document.createElement("li");
+  let largestItem = document.createElement("li");
+  let totalSumItem = document.createElement("li");
+  let averageItem = document.createElement("li");
+  let totalNumbersItem = document.createElement("li");
+  let smallest = numbers[0];
+  let largest = numbers[0];
+  let totalNumbers = numbers.length;
+
+  for (let pos in numbers) {
+    sum += numbers[pos];
+    if (numbers[pos] > largest) {
+      largest = numbers[pos];
     }
-    if (numeros[pos] < menor) {
-      menor = numeros[pos];
+    if (numbers[pos] < smallest) {
+      smallest = numbers[pos];
     }
   }
-  todo.innerHTML = `Ao todo temos ${tot} números cadastrados.`;
-  texto.appendChild(todo);
-  maiorItem.innerHTML = `O maior valor informado foi ${maior}.`;
-  texto.appendChild(maiorItem);
-  menorItem.innerHTML = `O menor valor informado foi ${menor}.`;
-  texto.appendChild(menorItem);
-  somaTotal.innerHTML = `Somando todos os valores temos ${soma}.`;
-  texto.appendChild(somaTotal);
-  mediaTotal.innerHTML = `A média dos valores digitados é ${soma / tot}.`;
-  texto.appendChild(mediaTotal);
+
+  totalNumbersItem.innerHTML = `There are ${totalNumbers} registered numbers.`;
+  resultText.appendChild(totalNumbersItem);
+  largestItem.innerHTML = `The highest value entered was ${largest}.`;
+  resultText.appendChild(largestItem);
+  smallestItem.innerHTML = `The smallest value entered was ${smallest}.`;
+  resultText.appendChild(smallestItem);
+  totalSumItem.innerHTML = `Adding all values, we have ${sum}.`;
+  resultText.appendChild(totalSumItem);
+  averageItem.innerHTML = `The average of the entered values is ${
+    sum / totalNumbers
+  }.`;
+  resultText.appendChild(averageItem);
 }
 
-function limpar() {
-  numeros = [];
-  let select = document.querySelector("#seltab");
-  select.innerHTML = `<option value="initial">Digite um valor acima</option>`;
-  texto.innerHTML = "";
+function clearNumbers() {
+  numbers = [];
+  let selectTab = document.querySelector("#seltab");
+  selectTab.innerHTML = `<option value="initial">Enter a value above</option>`;
+  resultText.innerHTML = "";
   document.querySelector("#txtn").value = "";
   document.querySelector("#txtn").focus();
 }

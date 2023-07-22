@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Analisador de Números</title>
+    <title>Number Analyzer</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header id="header">
-      <h2>Analisador de Números</h2>
+      <h2>Number Analyzer</h2>
     </header>
     <div class="container">
       <section id="section">
         <div>
-          <label for="txtn">Número (entre 1 e 100):</label>
+          <label for="txtn">Number (between 1 and 100):</label>
           <input type="number" name="txtn" id="txtn" />
-          <input type="button" value="Adicionar" onclick="gerar()" />
+          <input type="button" value="Add" onclick="generate()" />
         </div>
         <div>
           <br />
-          <select name="lista" id="seltab" size="10">
-            <option value="initial">Digite um valor acima</option>
+          <select name="list" id="seltab" size="10">
+            <option value="initial">Enter a value above</option>
           </select>
           <br />
-          <input type="button" value="Finalizar" onclick="finalizar()" />
-          <input type="button" value="Limpar" onclick="limpar()" />
+          <input type="button" value="Finish" onclick="finish()" />
+          <input type="button" value="Clear" onclick="clearNumbers()" />
         </div>
         <div id="res">
-          <ul class="resultado-lista">
+          <ul class="result-list">
             <li></li>
           </ul>
         </div>
