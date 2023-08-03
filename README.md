@@ -1,6 +1,6 @@
 # NumberAnalyzerJavaScript
 
-You can check this web application clicking <a href="https://pedrosmaxy.github.io/NumberAnalyzerJavaScript/">HERE.</a>.
+You can check this web application clicking <a href="https://pedrosmaxy.github.io/NumberAnalyzerJavaScript/">HERE.</a>
 
 Initial menu:
 
