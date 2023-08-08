@@ -70,7 +70,7 @@ section {
   padding: 0;
   padding-bottom: 75px;
   list-style: none;
-  font: bold 12pt Arial;
+  font-size: clamp(8px, 1em, 20pt);
 }
 
 .result-list li {
